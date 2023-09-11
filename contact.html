@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js" defer></script>
+    <script src="script/validation.js"></script>
 </head>
 
 <body class="bg-white">
@@ -112,65 +113,94 @@
 
     <section class="bg-[url('/img/bg-form.jpg')]">
         <div class="py-8 lg:py-16 px-4 max-w-screen-sm mx-auto">
-            <h2 class="mb-10 text-4xl tracking-tight font-extrabold text-center text-[#3b1b00]">Contactez-nous</h2>
-            <form action="#" class="space-y-4">
-                <div>
+            <h1 class="mb-10 text-4xl tracking-tight text-center text-[#3b1b00]">Contactez-nous</h1>
+            <form id="form" action="confirmation.html" method="post" onsubmit="return validateForm()" class="space-y-4" novalidate>
+                <div class="input-control">
                     <label for="inpPrenom" class="block mb-2 text-sm font-medium text-[#3b1b00]">Prénom</label>
-                    <input type="text" name="txtPrenom" id="txtPrenom"
+                    <input type="text" name="prenom" id="prenom"
                         class="shadow-sm bg-gray-50 border border-[#3b1b00] text-gray-900 text-sm rounded-lg block w-full p-2.5"
                         placeholder="Prénom" required>
+                    <div class="errorMessage"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <label for="inpNom" class="block mb-2 text-sm font-medium text-[#3b1b00]">Nom</label>
-                    <input type="text" name="txtNom" id="txtNom"
+                    <input type="text" name="nom" id="nom"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-[#3b1b00] shadow-sm"
                         placeholder="Nom" required>
+                    <div class="errorMessage"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <label for="inpDate" class="block mb-2 text-sm font-medium text-[#3b1b00]">Date de
                         naissance</label>
                     <input type="date" name="dateNaissance" id="dateNaissance"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-[#3b1b00] shadow-sm"
                         required>
+                    <div class="errorMessage"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <label for="inpEmail" class="block mb-2 text-sm font-medium text-[#3b1b00]">Courriel</label>
                     <input type="email" name="email" id="email"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-[#3b1b00] shadow-sm"
                         placeholder="xyz@mail.com" required>
+                    <div class="errorMessage"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <label for="inpTel" class="block mb-2 text-sm font-medium text-[#3b1b00]">Numéro de
                         téléphone</label>
                     <input type="tel" name="numTelephone" id="numTelephone"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-[#3b1b00] shadow-sm"
                         placeholder="Numéro de téléphone" required>
+                    <div class="errorMessage"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <label for="inpVille" class="block mb-2 text-sm font-medium text-[#3b1b00]">Ville</label>
-                    <input type="text" name="txtVille" id="txtVille"
+                    <input type="text" name="ville" id="ville"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-[#3b1b00] shadow-sm"
                         placeholder="Ville" required>
+                    <div class="errorMessage"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <label for="infolettre" class="block mb-2 text-sm font-medium text-[#3b1b00]">M'inscrire à
                         l'infolettre</label>
                     <input type="checkbox" name="ckbInfolettre" id="ckbInfolettre" class="block rounded-lg">
+                    <div class="errorMessage"></div>
                 </div>
-                <div class="mb-3">
+                <div>
                     <label for="" class="block mb-2 text-sm font-medium text-[#3b1b00]">Commentaire</label>
                     <textarea name="txtMessage" id="txtMessage"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-[#3b1b00] shadow-sm"
                         placeholder="Laissez un commentaire..."></textarea>
                 </div>
-                <div class="self-end">
+                <div>
                     <button type="submit"
                         class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#3b1b00] sm:w-fit hover:bg-[#f1b590] hover:text-[#3b1b00]">Envoyer</button>
                 </div>
             </form>
         </div>
-
     </section>
+
+    <hr class="border-[#3b1b00] sm:mx-auto w-4/5 my-12" />
+
+
+    <section>
+        <div class="mb-10">
+            <h1 class="text-center text-4xl text-[#3b1b00] mb-5 mt-10">Nos points de vente</h1>
+            <p class="text-lg font-normal text-center text-gray-500 mb-5">Nos produits sont disponibles dans
+                plusieurs points de vente à travers le Québec.</p>
+            <div class="flex justify-center">
+                <a href="#"
+                    class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-[#f1b590] hover:bg-[#3b1b00]">
+                    Viens nous voir!
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
 
     <footer class="p-4 bg-orange-50 rounded-lg shadow md:px-6 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
