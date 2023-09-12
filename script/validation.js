@@ -1,6 +1,5 @@
 const validateForm = () => {
 
-    const form = document.getElementById('form');
     const prenom = document.getElementById('prenom');
     const nom = document.getElementById('nom');
     const dateNaissane = document.getElementById('dateNaissance');

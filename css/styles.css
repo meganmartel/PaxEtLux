@@ -1,9 +1,3 @@
-*{ box-sizing: border-box;}
-
-body{
-	background-color: aliceblue;
-}
-
 .container{
 	width: 90%;
 	max-width: 1200px;
