@@ -44,7 +44,8 @@ const FILES_TO_CACHE = [
     'img/produit-5.png',
     'img/produit-6.png',
     'img/produit-7.png',
-    'img/produit-8.png'
+    'img/produit-8.png',
+    'img/bg-form.jpg'
 ];
 
 self.addEventListener('install', (evt) => {
