@@ -63,10 +63,34 @@ self.addEventListener('install', (evt) => {
 self.addEventListener('activate', (evt) => {
     console.log('[ServiceWorker] Activate');
 
+    evt.waitUntil(
+        caches.keys().then((keyList) => {
+            return Promise.all(
+                keyList.map((key) => {
+                    if (key !== CACHE_NAME) {
+                        console.log('[ServiceWorker] Removing old cache', key);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        })
+    );
+
     self.clients.claim();
 });
 
 self.addEventListener('fetch', (evt) => {
     console.log('[ServiceWorker] Fetch', evt.request.url);
+
+    evt.respondWith(
+        caches.match(evt.request).then((response) => {
+            // Si la ressource est présente en cache, la renvoyer
+            if (response) {
+                return response;
+            }
+            // Sinon, effectuer une requête réseau pour la ressource
+            return fetch(evt.request);
+        })
+    );
 
 });
