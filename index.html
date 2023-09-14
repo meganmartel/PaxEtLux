@@ -19,6 +19,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js" defer></script>
 </head>
 
+if('serviceWorker' in navigator) {
+	window.addEventListener('load',() => {
+		navigator.serviceWorker.register('service-worker.js')
+		.then((reg) => {
+			console.log('Service worker registered.', reg);
+		});
+	});
+}
+
 <body class="bg-white">
 	<header>
 		<nav class="relative px-4 py-4 flex justify-between items-center bg-orange-50">
@@ -390,6 +399,7 @@
 		<span class="block text-sm text-gray-500 sm:text-center">© 2023 <a href="#" target="_blank"
 				class="hover:underline">Pax et Lux™</a>. Tous droits réservés.</span>
 	</footer>
+
 </body>
 
 <script>
