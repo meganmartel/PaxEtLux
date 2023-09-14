@@ -14,19 +14,22 @@
 	<meta name="apple-mobile-web-app-title" content="Pax et Lux">
 	<link rel="apple-touch-icon" href="img/icon-192x192.png">
 	<meta name="description" content="Une boutique en ligne de bougies faites à la main">
-	<meta name="theme-color" content="#f1b590"/>
+	<meta name="theme-color" content="#f1b590" />
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js" defer></script>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('service-worker.js')
+					.then((reg) => {
+						console.log('Service worker registered.', reg);
+					});
+			});
+		}
+	</script>
 </head>
 
-if('serviceWorker' in navigator) {
-	window.addEventListener('load',() => {
-		navigator.serviceWorker.register('service-worker.js')
-		.then((reg) => {
-			console.log('Service worker registered.', reg);
-		});
-	});
-}
+
 
 <body class="bg-white">
 	<header>
@@ -290,7 +293,8 @@ if('serviceWorker' in navigator) {
 					<footer class="mb-3 text-sm text-center text-gray-500 dark:text-gray-400">
 						<p>Commenté au Canada le <time datetime="2023-06-05 19:00">5 Juin 2023</time></p>
 					</footer>
-					<p class="mb-2 text-center text-gray-500 dark:text-gray-400">J'adore l'odeur de ces chandelles! Elles durent
+					<p class="mb-2 text-center text-gray-500 dark:text-gray-400">J'adore l'odeur de ces chandelles!
+						Elles durent
 						très
 						longtemps. Je vais définitivement en racheter. </p>
 				</div>
@@ -329,7 +333,8 @@ if('serviceWorker' in navigator) {
 					<footer class="mb-3 text-sm text-center text-gray-500 dark:text-gray-400">
 						<p>Commenté au Canada le <time datetime="2023-06-12 19:00">12 Juin 2023</time></p>
 					</footer>
-					<p class="mb-2 text-center text-gray-500 dark:text-gray-400">J'adore cette fragrance! Je ne peux plus imaginer
+					<p class="mb-2 text-center text-gray-500 dark:text-gray-400">J'adore cette fragrance! Je ne peux
+						plus imaginer
 						ma
 						vie sans cette chandelle. Elle est relaxante!</p>
 				</div>
@@ -369,7 +374,8 @@ if('serviceWorker' in navigator) {
 					<footer class="mb-3 text-sm text-center text-gray-500 dark:text-gray-400">
 						<p>Commenté au Canada le <time datetime="2023-06-28 19:00">28 Juin 2023</time></p>
 					</footer>
-					<p class="mb-2 text-center text-gray-500 dark:text-gray-400">Les chandelles sont très bien faites et l'odeur est
+					<p class="mb-2 text-center text-gray-500 dark:text-gray-400">Les chandelles sont très bien faites et
+						l'odeur est
 						agréable. Par contre, le format est un peu petit pour le prix. </p>
 				</div>
 			</div>
