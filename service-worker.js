@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-cache-v5';
+const CACHE_NAME = 'static-cache-v6';
 
 const FILES_TO_CACHE = [
     'offline.html',
@@ -82,4 +82,16 @@ self.addEventListener('activate', (evt) => {
 self.addEventListener('fetch', (evt) => {
     console.log('[ServiceWorker] Fetch', evt.request.url);
 
+    if(evt.request.mode!=='naviguate') {
+        return;
+    }
+    evt.respondWith(
+        fetch(evt.request)
+            .catch(() => {
+                return caches.open(CACHE_NAME)
+                .then((cache) => {
+                    return cache.match('/meganmartel/github.io/offline.html');
+                });
+            })
+    );
 });
