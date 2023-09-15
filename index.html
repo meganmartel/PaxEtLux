@@ -38,6 +38,9 @@
 			<a class="leading-none" href="index.html">
 				<img src="img/PaxEtLux.png" class="h-20" alt="logo" viewBox="0 0 10240 10240"></img>
 			</a>
+			<button id="butInstall" aria-label="Install"
+                class="hidden lg:inline-block py-2 ml-3 px-6 bg-[#f5d6c3] hover:bg-[#f1b590] text-sm text-white font-bold rounded-xl transition duration-200"
+                hidden>Installer la PWA</button>
 			<div class="lg:hidden">
 				<button class="navbar-burger flex items-center text-[#3b1b00] p-3">
 					<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -109,6 +112,9 @@
 							href="#">Sign in</a>
 						<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-[#f5d6c3] hover:bg-[#f1b590] rounded-xl"
 							href="#">Sign Up</a>
+						<button id="butInstall" aria-label="Install"
+							class="block px-4 py-3 mb-2 mx-auto leading-loose text-xs text-center text-white font-semibold bg-[#f5d6c3] hover:bg-[#f1b590] rounded-xl"
+							hidden>Installer la PWA</button>
 					</div>
 					<p class="my-4 text-xs text-center text-gray-400">
 						<span>Copyright © 2023</span>
@@ -451,5 +457,7 @@
 		}
 	});
 </script>
+
+<script src="js/install.js"></script>
 
 </html>
