@@ -29,5 +29,5 @@ function installPWA(evt) {
 window.addEventListener('appinstalled', logAppInstalled);
 
 function logAppInstalled(evt) {
-    console.log('Weather App was installed.', evt);
+    console.log('Pax et Lux App was installed.', evt);
 }
