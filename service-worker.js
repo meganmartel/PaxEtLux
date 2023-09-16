@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-cache-v12';
+const CACHE_NAME = 'static-cache-v13';
 
 const FILES_TO_CACHE = [
     'offline.html',
@@ -30,6 +30,7 @@ const FILES_TO_CACHE = [
     'img/grid-10.jpg',
     'img/grid-11.jpg',
     'img/grid-12.jpg',
+    'img/icon-144x144.png',
     'img/icon-192x192.png',
     'img/icon-512x512.png',
     'img/meilleurs-vendeurs-1.jpg',
