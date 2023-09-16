@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-cache-v15';
+const CACHE_NAME = 'static-cache-v16';
 
 const FILES_TO_CACHE = [
     'offline.html',
@@ -46,7 +46,8 @@ const FILES_TO_CACHE = [
     'img/produit-6.png',
     'img/produit-7.png',
     'img/produit-8.png',
-    'tailwind.config.js'
+    'tailwind.config.js',
+    'js/install.js'
 ];
 
 self.addEventListener('install', (evt) => {
