@@ -7,7 +7,7 @@
     <title>Pax et Lux</title>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" type="favicon" href="/img/PaxEtLux.png">
+    <link rel="icon" type="image/png" href="img/PaxEtLux.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js" defer></script>
@@ -17,7 +17,7 @@
     <header>
         <nav class="relative px-4 py-4 flex justify-between items-center bg-orange-50">
             <a class="leading-none" href="index.html">
-                <img src="img/PaxEtLux.png" class="h-20" alt="logo" viewBox="0 0 10240 10240"></img>
+                <img src="img/PaxEtLux.png" class="h-20" alt="logo">
             </a>
             <div class="lg:hidden">
                 <button class="navbar-burger flex items-center text-[#3b1b00] p-3">
@@ -58,7 +58,7 @@
                 class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
                 <div class="flex items-center mb-8">
                     <a class="mr-auto text-3xl font-bold leading-none" href="#">
-                        <img src="img/PaxEtLux.png" class="h-20" alt="logo" viewBox="0 0 10240 10240"></img>
+                        <img src="img/PaxEtLux.png" class="h-20" alt="logo">
                     </a>
                     <button class="navbar-close">
                         <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
@@ -433,16 +433,18 @@
                 </article>
 
             </div>
+        </div>
     </section>
 
     <hr class="border-[#3b1b00] mx-auto w-64 md:w-4/5 my-12" />
 
     <section>
-        <h1 class="text-center text-2xl sm:text-4xl text-[#3b1b00] mb-10">Comment confectionner des chandelles à la main?</h1>
+        <h1 class="text-center text-2xl sm:text-4xl text-[#3b1b00] mb-10">Comment confectionner des chandelles à la
+            main?</h1>
         <div class="flex justify-center items-center m-0">
             <div class="text-center mb-14">
-                <iframe class="max-w-xs lg:max-w-full" width="560" height="315" src="https://www.youtube.com/embed/4XqbbJDX3Rc?si=8Q8yTGHm7vBu_3lh"
-                    title="YouTube video player" frameborder="0"
+                <iframe class="max-w-xs lg:max-w-full" width="560" height="315"
+                    src="https://www.youtube.com/embed/4XqbbJDX3Rc?si=8Q8yTGHm7vBu_3lh" title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
@@ -470,49 +472,51 @@
         <span class="block text-sm text-gray-500 sm:text-center">© 2023 <a href="#" target="_blank"
                 class="hover:underline">Pax et Lux™</a>. Tous droits réservés.</span>
     </footer>
+
+    <script>
+        // Burger menus
+        document.addEventListener('DOMContentLoaded', function () {
+            // open
+            const burger = document.querySelectorAll('.navbar-burger');
+            const menu = document.querySelectorAll('.navbar-menu');
+
+            if (burger.length && menu.length) {
+                for (var i = 0; i < burger.length; i++) {
+                    burger[i].addEventListener('click', function () {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+
+            // close
+            const close = document.querySelectorAll('.navbar-close');
+            const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+            if (close.length) {
+                for (var i = 0; i < close.length; i++) {
+                    close[i].addEventListener('click', function () {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+
+            if (backdrop.length) {
+                for (var i = 0; i < backdrop.length; i++) {
+                    backdrop[i].addEventListener('click', function () {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 
-<script>
-    // Burger menus
-    document.addEventListener('DOMContentLoaded', function () {
-        // open
-        const burger = document.querySelectorAll('.navbar-burger');
-        const menu = document.querySelectorAll('.navbar-menu');
 
-        if (burger.length && menu.length) {
-            for (var i = 0; i < burger.length; i++) {
-                burger[i].addEventListener('click', function () {
-                    for (var j = 0; j < menu.length; j++) {
-                        menu[j].classList.toggle('hidden');
-                    }
-                });
-            }
-        }
-
-        // close
-        const close = document.querySelectorAll('.navbar-close');
-        const backdrop = document.querySelectorAll('.navbar-backdrop');
-
-        if (close.length) {
-            for (var i = 0; i < close.length; i++) {
-                close[i].addEventListener('click', function () {
-                    for (var j = 0; j < menu.length; j++) {
-                        menu[j].classList.toggle('hidden');
-                    }
-                });
-            }
-        }
-
-        if (backdrop.length) {
-            for (var i = 0; i < backdrop.length; i++) {
-                backdrop[i].addEventListener('click', function () {
-                    for (var j = 0; j < menu.length; j++) {
-                        menu[j].classList.toggle('hidden');
-                    }
-                });
-            }
-        }
-    });
-</script>
 
 </html>
